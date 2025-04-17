@@ -16266,6 +16266,12 @@
   <LocaleResource Name="Admin.System.Warnings.URL.Reserved">
     <Value>The entered text will be replaced by '{0}', since it is already used as a SEO-friendly name for another page or contains invalid characters</Value>
   </LocaleResource>
+    <LocaleResource Name="Admin.ProductAttribute.List.SearchName">
+        <Value>Product attribute name</Value>
+    </LocaleResource>
+    <LocaleResource Name="Admin.ProductAttribute.List.SearchName.Hint">
+        <Value>A product attribute name.</Value>
+    </LocaleResource>
   <LocaleResource Name="Admin.Vendors">
     <Value>Vendors</Value>
   </LocaleResource>
