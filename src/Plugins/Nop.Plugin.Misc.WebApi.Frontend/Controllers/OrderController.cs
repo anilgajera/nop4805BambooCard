@@ -50,10 +50,7 @@ public partial class OrderController : BaseNopWebApiController
         var ordersDto = new List<CustomerOrderDetailsModelDto>();
         foreach (var order in orders)
         {
-            var orderDto = new CustomerOrderDetailsModelDto();
-            orderDto.OrderId = order.Id;
-            orderDto.TotalAmount = await _priceFormatter.FormatPriceAsync(order.OrderTotal, true, false);
-            orderDto.OrderDate = await _dateTimeHelper.ConvertToUserTimeAsync(order.CreatedOnUtc, DateTimeKind.Utc);
+            var orderDto = new CustomerOrderDetailsModelDto(order.Id, await _priceFormatter.FormatPriceAsync(order.OrderTotal, true, false), await _dateTimeHelper.ConvertToUserTimeAsync(order.CreatedOnUtc, DateTimeKind.Utc));
             ordersDto.Add(orderDto);
         }
         return new JsonResult(new { success = true, message = "Success", data = ordersDto }) { StatusCode = StatusCodes.Status200OK };
