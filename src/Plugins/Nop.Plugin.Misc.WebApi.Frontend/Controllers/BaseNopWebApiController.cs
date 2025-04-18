@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Nop.Plugin.Misc.WebApi.Frontend.Helpers;
 
 namespace Nop.Plugin.Misc.WebApi.Frontend.Controllers;
 

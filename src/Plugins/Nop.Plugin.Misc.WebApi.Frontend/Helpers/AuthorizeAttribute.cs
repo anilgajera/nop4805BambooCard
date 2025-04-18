@@ -61,16 +61,6 @@ public class AuthorizeAttribute : TypeFilterAttribute
         /// <param name="context">Authorization filter context</param>
         public Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
-            //check whether this filter has been overridden for the Action
-            var actionFilter = context.ActionDescriptor.FilterDescriptors
-                .Where(filterDescriptor => filterDescriptor.Scope == FilterScope.Action)
-                .Select(filterDescriptor => filterDescriptor.Filter)
-                .OfType<AuthorizeAttribute>()
-                .FirstOrDefault();
-
-            //ignore filter (the action is available even if navigation is not allowed)
-            if (actionFilter?.IgnoreFilter ?? _ignoreFilter)
-                return Task.CompletedTask;
 
             if (context.HttpContext.Items[WebApiFrontendDefaults.CustomerKey] is not Customer)
                 // not logged in

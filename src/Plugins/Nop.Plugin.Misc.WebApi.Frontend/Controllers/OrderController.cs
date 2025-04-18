@@ -55,7 +55,7 @@ public partial class OrderController : BaseNopWebApiController
             orderDto.OrderDate = await _dateTimeHelper.ConvertToUserTimeAsync(order.CreatedOnUtc, DateTimeKind.Utc);
             ordersDto.Add(orderDto);
         }
-        return new JsonResult(new { data = ordersDto }) { StatusCode = StatusCodes.Status200OK };
+        return new JsonResult(new { success = true, message = "Success", data = ordersDto }) { StatusCode = StatusCodes.Status200OK };
     }
 
     #endregion

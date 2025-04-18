@@ -1,11 +1,11 @@
-﻿using System.Reflection;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
-using Nop.Core;
 using Nop.Core.Infrastructure;
+using Nop.Plugin.Misc.WebApi.Framework.Middleware;
+using Nop.Plugin.Misc.WebApi.Frontend.Services;
 
 namespace Nop.Plugin.Misc.WebApi.Frontend.Infrastructure;
 
@@ -42,16 +42,10 @@ public partial class PluginNopStartup : INopStartup
         {
             options.SwaggerDoc($"{WebApiFrontendDefaults.VERSION}", new OpenApiInfo
             {
-                Title = "nopCommerce Web API",
+                Title = "Web API",
                 Version = WebApiFrontendDefaults.VERSION,
-                Description = "nopCommerce Web API"
+                Description = "Web API"
             });
-
-            //// Set the comments path for the Swagger JSON and UI.
-            //var fileProvider = CommonHelper.DefaultFileProvider;
-            //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            //var xmlFilePath = fileProvider.Combine(Environment.CurrentDirectory, "Plugins", WebApiFrontendDefaults.SystemName, xmlFile);
-            //options.IncludeXmlComments(xmlFilePath);
 
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
@@ -78,7 +72,8 @@ public partial class PluginNopStartup : INopStartup
                 }
             });
         });
-        //services.AddSwaggerGenNewtonsoftSupport();
+        services.AddScoped<IJwtTokenService, JwtTokenService>();
+        services.AddScoped<IAuthorizationUserService, AuthorizationUserService>();
     }
 
     /// <summary>
@@ -97,13 +92,16 @@ public partial class PluginNopStartup : INopStartup
             c.RoutePrefix = WebApiFrontendDefaults.SwaggerUIRoutePrefix;
 
             c.SwaggerEndpoint($"{WebApiFrontendDefaults.VERSION}/swagger.json",
-                $"nopCommerce Web API for public store {WebApiFrontendDefaults.VERSION}");
+                $"{WebApiFrontendDefaults.VERSION}");
         });
 
         application.UseRouting();
 
         // cors policy
         application.UseCors();
+
+        // custom jwt auth middleware
+        application.UseMiddleware<JwtMiddleware>();
     }
 
     /// <summary>

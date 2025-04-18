@@ -65,6 +65,8 @@ public partial class WebApiFrontendDefaults
     /// </summary>
     public static int MinSecretKeyLength => 32;
 
+    public static string SecretKey = "SEWhiOI5IGoXJmdQlIolvquLYspGEm7A";
+
     /// <summary>
     /// Gets swagger document version
     /// </summary>
