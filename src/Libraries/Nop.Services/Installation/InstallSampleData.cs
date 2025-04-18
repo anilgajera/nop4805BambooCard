@@ -278,31 +278,40 @@ public partial class InstallationService
     /// <returns>A task that represents the asynchronous operation</returns>
     protected virtual async Task InstallCheckoutAttributesAsync()
     {
-        var checkoutAttribute = await _dataProvider.InsertEntityAsync(new CheckoutAttribute
+        await _dataProvider.InsertEntityAsync(new CheckoutAttribute
         {
-            Name = "Gift wrapping",
-            IsRequired = true,
+            Name = "Gift Message",
+            IsRequired = false,
             ShippableProductRequired = true,
-            AttributeControlType = AttributeControlType.DropdownList,
+            AttributeControlType = AttributeControlType.TextBox,
             DisplayOrder = 1
         });
 
-        await _dataProvider.BulkInsertEntitiesAsync(new[]{
-            new CheckoutAttributeValue
-            {
-                Name = "No",
-                PriceAdjustment = 0,
-                DisplayOrder = 1,
-                IsPreSelected = true,
-                AttributeId = checkoutAttribute.Id
-            },
-            new CheckoutAttributeValue
-            {
-                Name = "Yes",
-                PriceAdjustment = 10,
-                DisplayOrder = 2,
-                AttributeId = checkoutAttribute.Id
-            }});
+        //var checkoutAttribute = await _dataProvider.InsertEntityAsync(new CheckoutAttribute
+        //{
+        //    Name = "Gift wrapping",
+        //    IsRequired = true,
+        //    ShippableProductRequired = true,
+        //    AttributeControlType = AttributeControlType.DropdownList,
+        //    DisplayOrder = 1
+        //});
+
+        //await _dataProvider.BulkInsertEntitiesAsync(new[]{
+        //    new CheckoutAttributeValue
+        //    {
+        //        Name = "No",
+        //        PriceAdjustment = 0,
+        //        DisplayOrder = 1,
+        //        IsPreSelected = true,
+        //        AttributeId = checkoutAttribute.Id
+        //    },
+        //    new CheckoutAttributeValue
+        //    {
+        //        Name = "Yes",
+        //        PriceAdjustment = 10,
+        //        DisplayOrder = 2,
+        //        AttributeId = checkoutAttribute.Id
+        //    }});
     }
 
     /// <summary>
