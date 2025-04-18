@@ -40,6 +40,7 @@ public partial class OrderController : BaseNopWebApiController
 
     [HttpGet("{email}")]
     [ProducesResponseType(typeof(CustomerOrderDetailsModelDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(CustomerOrderDetailsModelDto), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> OrderDetails(string email)
     {
         var cutomer = await _customerService.GetCustomerByEmailAsync(email);
