@@ -60,4 +60,5 @@
 
 ### 5. Containerization & Quick Deployment Setup ###
 * Created a docker file to build the image and run the container
+ ![Docker Image](https://awesomescreenshot.s3.amazonaws.com/image/6331037/54007798-6f7e89be056cccfac5b29697ea1fc558.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T032242Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=2dd5b0fedf24c10e16f1a263ec92cd202a7b5146a10149bfe56b13190111a58c)
 
