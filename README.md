@@ -26,14 +26,15 @@
 * Plugin will auto install on store setup, Below are the steps for separate plugin installation
 * Save DiscountRules.CustomDiscounts Plugin in "\Presentation\Nop.Web\Plugins\\" path
 * Go to Admin area -> Configuration -> Local Plugins and find "Custom Discounts" plugin
-![Menu](https://awesomescreenshot.s3.amazonaws.com/image/6331037/54007545-3e14d30351d3b25a38d5e40f8e14e3ce.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T021847Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=dbbf1e571d1b2802364f17c1588950b2864e38d19dbd1373fe9df72d7a47014c)
 * Click on Install button
+![Menu](https://awesomescreenshot.s3.amazonaws.com/image/6331037/54007545-3e14d30351d3b25a38d5e40f8e14e3ce.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T021847Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=dbbf1e571d1b2802364f17c1588950b2864e38d19dbd1373fe9df72d7a47014c)
 * Create a Disount in Admin area -> Promotions -> Discounts
-*![Discount](https://awesomescreenshot.s3.amazonaws.com/image/6331037/54007574-2930b5170082f98263d60e86070ef598.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T022357Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=c6fd348d8808d46d395d7bcf69e141ed1c2492994e9363ecab91bd0047d55f5b)
-* When you are going to place 4th order, you will get a discount of 10% on the order total
+![Discount](https://awesomescreenshot.s3.amazonaws.com/image/6331037/54007574-2930b5170082f98263d60e86070ef598.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T022357Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=c6fd348d8808d46d395d7bcf69e141ed1c2492994e9363ecab91bd0047d55f5b)
+* When you are going to place 4th order and more, you will get a discount of 10% on the order total
  ![Discount](https://awesomescreenshot.s3.amazonaws.com/image/6331037/54007606-7f75f865be00a3b3e6d59652e474f784.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T023140Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=08f1b0d13cf9b5f07275089fa0ed3fc23b7f86bfe749ccd240600aa845144d2d)
 
 ### 2. Modify the Checkout Process ###
+* Add a “Gift Message” field at checkout.
 ![CartPage](https://awesomescreenshot.s3.amazonaws.com/image/6331037/54007584-fc88386f6934a08cd466984e00e84201.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T022540Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=5144c30e5bc9af5826c6bc5bc60489210c33288979d2c186f3fd5b15a8857363)
 ![AdminPage](https://awesomescreenshot.s3.amazonaws.com/image/6331037/54007598-26f74ec6b41dd143615cea008f1ec565.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T022807Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=653f8000e1a7388266e761a62d63ca896b79cd72098f4d14ebf229e5c0c8044c)
 
